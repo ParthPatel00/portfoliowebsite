@@ -1,34 +1,17 @@
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { SiReact, SiTypescript, SiPython, SiFirebase } from "react-icons/si";
+import awsLogo from "../assets/aws-color.svg";
+import geminiLogo from "../assets/gemini-color.svg";
+import SectionHeader from "../components/SectionHeader";
 
 const techIconMap: Record<string, React.ReactNode> = {
   React: <SiReact className="text-cyan-400" />,
   TypeScript: <SiTypescript className="text-blue-500" />,
   Python: <SiPython className="text-yellow-500" />,
-  "AWS Lambda": (
-    <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
-      className="w-5 h-5 inline"
-    />
-  ),
-  S3: (
-    <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
-      className="w-5 h-5 inline"
-    />
-  ),
-  DynamoDB: (
-    <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
-      className="w-5 h-5 inline"
-    />
-  ),
-  "Gemini API": (
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Google_Gemini_logo.svg/32px-Google_Gemini_logo.svg.png"
-      className="w-5 h-5 inline"
-    />
-  ),
+  "AWS Lambda": <img src={awsLogo} className="w-5 h-5 inline" />,
+  S3: <img src={awsLogo} className="w-5 h-5 inline" />,
+  DynamoDB: <img src={awsLogo} className="w-5 h-5 inline" />,
+  "Gemini API": <img src={geminiLogo} className="w-5 h-5 inline" />,
   Firebase: <SiFirebase className="text-yellow-400" />,
   NumPy: (
     <img
@@ -44,7 +27,7 @@ const techIconMap: Record<string, React.ReactNode> = {
   ),
   "scikit-learn": (
     <img
-      src="https://raw.githubusercontent.com/scikit-learn/scikit-learn.github.io/main/_static/scikit-learn-logo-small.png"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
       className="w-5 h-5 inline"
     />
   ),
@@ -104,8 +87,8 @@ const projects = [
 
 function Projects() {
   return (
-    <section>
-      <h2 className="text-3xl font-bold mb-6">Projects</h2>
+    <section className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto">
+      <SectionHeader text="Projects" />
       <div className="space-y-8">
         {projects.map((proj) => (
           <div
@@ -120,7 +103,7 @@ function Projects() {
                     href={proj.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 flex items-center gap-1"
+                    className="text-blue-500 flex items-center gap-1 cursor-pointer"
                   >
                     Live <FaExternalLinkAlt size={12} />
                   </a>

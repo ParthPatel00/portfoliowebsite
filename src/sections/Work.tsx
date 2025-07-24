@@ -1,17 +1,19 @@
+import SectionHeader from "../components/SectionHeader";
+
 function Work() {
   return (
-    <section>
-      <h2 className="text-3xl font-bold mb-6">Work Experience</h2>
+    <section className="flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
+      <SectionHeader text="Work Experience" />
 
       <div className="mb-6">
         <h3 className="text-xl font-semibold">Software Engineer @ Deloitte</h3>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="text-sm text-zinc-500 leading-relaxed dark:text-zinc-400">
           July 2022 – Nov 2024
         </p>
-        <p className="mt-2 font-medium">
+        <p className="mt-8 font-medium text-sm sm:text-base leading-relaxed">
           Client: Public Health Agency of Canada
         </p>
-        <ul className="list-disc list-inside text-sm space-y-1 mt-2">
+        <ul className="list-disc list-inside text-sm space-y-1 mt-2 text-sm sm:text-base leading-relaxed">
           <li>
             Led a FHIR-compliant cloud-based solution, earning the Deloitte
             Silver Dot Award.
@@ -26,10 +28,10 @@ function Work() {
           </li>
         </ul>
 
-        <p className="mt-4 font-medium">
+        <p className="mt-8 font-medium text-sm sm:text-base leading-relaxed">
           Client: Employment and Social Development Canada
         </p>
-        <ul className="list-disc list-inside text-sm space-y-1 mt-2">
+        <ul className="list-disc list-inside text-sm space-y-1 mt-2 text-sm sm:text-base leading-relaxed">
           <li>
             Delivered an AI chatbot replacing static guides with interactive
             walkthroughs.
