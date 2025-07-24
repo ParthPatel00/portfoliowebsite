@@ -4,7 +4,7 @@ import awsLogo from "../assets/aws-color.svg";
 import geminiLogo from "../assets/gemini-color.svg";
 import SectionHeader from "../components/SectionHeader";
 import { motion } from "framer-motion";
-
+import BackgroundBlob from "../components/BackgroundBlob";
 const techIconMap: Record<string, React.ReactNode> = {
   React: <SiReact className="text-cyan-400" />,
   TypeScript: <SiTypescript className="text-blue-500" />,
@@ -67,21 +67,24 @@ const projects = [
     name: "Number Recognition with Neural Network",
     description:
       "A neural net built from scratch to recognize handwritten digits using the MNIST dataset. Includes forward/backpropagation and evaluation tools.",
-    github: "https://github.com/ParthPatel00/ANN-Number-Recognition",
+    github:
+      "https://github.com/ParthPatel00/Number-Recognition-using-Artificial-Neural-Network-Classifier",
     stack: ["Python", "NumPy", "Matplotlib"],
   },
   {
     name: "Amazon Book Review Classification",
     description:
       "Classifies Amazon reviews into positive/negative using text processing (TF-IDF) and ML models like SVM, Logistic Regression.",
-    github: "https://github.com/ParthPatel00/AmazonReviewClassifier",
+    github:
+      "https://github.com/ParthPatel00/Amazon-Book-Customer-Review-Classification",
     stack: ["Python", "scikit-learn", "Pandas"],
   },
   {
     name: "Neighborhood Business Classification",
     description:
       "Predicts neighborhood business type using geolocation and ML clustering models. Uses exploratory data viz and spatial features.",
-    github: "https://github.com/ParthPatel00/BusinessClassifier",
+    github:
+      "https://github.com/ParthPatel00/Neighborhood-Business-Classification-Model",
     stack: ["Python", "scikit-learn", "Seaborn", "Matplotlib"],
   },
 ];
@@ -90,7 +93,10 @@ function Projects() {
   return (
     <section className="w-full">
       <SectionHeader text="Projects" />
-
+      <BackgroundBlob
+        className="-bottom-300 -right-60 w-80 h-50"
+        color="from-pink-400 via-red-500 to-white-500"
+      />
       <div className="max-w-4xl mx-auto px-4 space-y-8">
         {projects.map((proj) => (
           <motion.div

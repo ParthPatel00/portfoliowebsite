@@ -1,9 +1,13 @@
 import SectionHeader from "../components/SectionHeader";
-
+import BackgroundBlob from "../components/BackgroundBlob";
 function Work() {
   return (
     <section className="flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
       <SectionHeader text="Work Experience" />
+      <BackgroundBlob
+        className="-bottom-160 left-2 w-30 h-30"
+        color="from-green-400 via-green-500 to-blue-500"
+      />
 
       <div className="mb-6">
         <h3 className="text-xl font-semibold">Software Engineer @ Deloitte</h3>

@@ -1,12 +1,15 @@
 import { MdEmail } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import SectionHeader from "../components/SectionHeader";
-
+import BackgroundBlob from "../components/BackgroundBlob";
 function Contact() {
   return (
     <section className="flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
       <SectionHeader text="Contact" />
-
+      <BackgroundBlob
+        className="-bottom-530 -left-40 w-80 h-50"
+        color="from-cyan-400 via-blue-500 to-white-500"
+      />
       <p className="mb-4">
         Feel free to reach out if you'd like to collaborate or connect!
       </p>
