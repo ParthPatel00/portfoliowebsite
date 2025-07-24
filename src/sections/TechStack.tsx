@@ -64,26 +64,42 @@ const categories = {
 
 function TechStack() {
   return (
-    <section className="flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
+    <section className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto px-4">
       <SectionHeader text="Tech Stack" />
-      <motion.div className="space-y-4 w-full">
-        {Object.entries(categories).map(([category, items]) => (
-          <div key={category}>
-            <h3 className="text-xl font-semibold mb-4">{category}</h3>
-            <div className="flex flex-wrap justify-center gap-5">
+
+      <div className="relative flex flex-wrap justify-center gap-6 mt-10">
+        {Object.entries(categories).map(([category, items], index) => (
+          <motion.div
+            key={category}
+            animate={{ y: [0, -15, 0] }}
+            transition={{
+              duration: 2.5 + (index % 3),
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: "easeInOut",
+            }}
+            className="w-56 h-56 rounded-full bg-zinc-100 dark:bg-zinc-800 flex flex-col justify-center items-center text-sm p-4 shadow-lg transition-all hover:scale-105 hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 hover:text-white"
+            style={{
+              transform: `translateX(${
+                (index % 2 === 0 ? -1 : 1) * (index * 10)
+              }px)`,
+            }}
+          >
+            <h3 className="font-semibold text-base mb-2">{category}</h3>
+            <div className="flex flex-wrap justify-center gap-2">
               {items.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex items-center gap-2 bg-zinc-100 dark:bg-zinc-800 px-3 py-2 rounded shadow-sm text-sm"
+                  className="flex items-center gap-1 px-2 py-1 rounded-full bg-zinc-200 dark:bg-zinc-700 text-xs"
                 >
                   {tech.icon}
                   <span>{tech.name}</span>
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }
