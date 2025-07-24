@@ -8,7 +8,6 @@ function ScrollToTop() {
     const toggleVisible = () => {
       setVisible(window.scrollY > 200);
     };
-
     window.addEventListener("scroll", toggleVisible);
     return () => window.removeEventListener("scroll", toggleVisible);
   }, []);
@@ -22,7 +21,7 @@ function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 z-50 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition"
+      className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white shadow-lg hover:scale-110 transition-all"
       aria-label="Scroll to top"
     >
       <ArrowUp size={20} />

@@ -13,7 +13,11 @@ function Contact() {
       <ul className="space-y-3 text-sm">
         <li className="flex items-center gap-2">
           <MdEmail className="text-blue-500" />
-          <a href="mailto:patelsparth00@gmail.com" className="hover:underline">
+          <a
+            href="mailto:patelsparth00@gmail.com"
+            className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition
+"
+          >
             patelsparth00@gmail.com
           </a>
         </li>
@@ -22,7 +26,8 @@ function Contact() {
           <a
             href="https://github.com/ParthPatel00"
             target="_blank"
-            className="hover:underline"
+            className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition
+"
           >
             github.com/ParthPatel00
           </a>
@@ -32,7 +37,8 @@ function Contact() {
           <a
             href="https://www.linkedin.com/in/parth-patel00"
             target="_blank"
-            className="hover:underline"
+            className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition
+"
           >
             linkedin.com/in/parth-patel00
           </a>

@@ -6,6 +6,7 @@ import Work from "./sections/Work.tsx";
 import Projects from "./sections/Projects.tsx";
 import Contact from "./sections/Contact.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import FadeInSection from "./components/FadeInSection";
 
 function App() {
   return (
@@ -13,19 +14,29 @@ function App() {
       <Navbar />
       <main className="... space-y-20">
         <section id="about" className="scroll-mt-24 mt-20">
-          <About />
+          <FadeInSection>
+            <About />
+          </FadeInSection>
         </section>
         <section id="tech" className="scroll-mt-24">
-          <TechStack />
+          <FadeInSection>
+            <TechStack />
+          </FadeInSection>
         </section>
         <section id="work" className="scroll-mt-24">
-          <Work />
+          <FadeInSection>
+            <Work />
+          </FadeInSection>
         </section>
         <section id="projects" className="scroll-mt-24">
-          <Projects />
+          <FadeInSection>
+            <Projects />
+          </FadeInSection>
         </section>
         <section id="contact" className="scroll-mt-24 mb-20">
-          <Contact />
+          <FadeInSection>
+            <Contact />
+          </FadeInSection>
         </section>
       </main>
       <ScrollToTop />

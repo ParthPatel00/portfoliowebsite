@@ -16,6 +16,7 @@ import { SiGooglecloud } from "react-icons/si";
 import azureLogo from "../assets/azure-2.svg";
 import geminiLogo from "../assets/gemini-color.svg";
 import SectionHeader from "../components/SectionHeader";
+import { motion } from "framer-motion";
 
 const categories = {
   Languages: [
@@ -65,7 +66,7 @@ function TechStack() {
   return (
     <section className="flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
       <SectionHeader text="Tech Stack" />
-      <div className="space-y-4 w-full">
+      <motion.div className="space-y-4 w-full">
         {Object.entries(categories).map(([category, items]) => (
           <div key={category}>
             <h3 className="text-xl font-semibold mb-4">{category}</h3>
@@ -82,7 +83,7 @@ function TechStack() {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

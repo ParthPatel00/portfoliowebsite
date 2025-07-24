@@ -3,6 +3,7 @@ import { SiReact, SiTypescript, SiPython, SiFirebase } from "react-icons/si";
 import awsLogo from "../assets/aws-color.svg";
 import geminiLogo from "../assets/gemini-color.svg";
 import SectionHeader from "../components/SectionHeader";
+import { motion } from "framer-motion";
 
 const techIconMap: Record<string, React.ReactNode> = {
   React: <SiReact className="text-cyan-400" />,
@@ -87,23 +88,27 @@ const projects = [
 
 function Projects() {
   return (
-    <section className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto">
+    <section className="w-full">
       <SectionHeader text="Projects" />
-      <div className="space-y-8">
+
+      <div className="max-w-4xl mx-auto px-4 space-y-8">
         {projects.map((proj) => (
-          <div
+          <motion.div
             key={proj.name}
-            className="bg-zinc-100 dark:bg-zinc-800 p-6 rounded-lg shadow-sm"
+            className="bg-zinc-100 dark:bg-zinc-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-all"
+            whileHover={{ scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="flex items-center justify-between">
+            {/* Top Row: Title + Links */}
+            <div className="flex items-center justify-between flex-wrap gap-y-2">
               <h3 className="text-xl font-semibold">{proj.name}</h3>
-              <div className="space-x-4">
+              <div className="space-x-4 text-sm">
                 {proj.live && (
                   <a
                     href={proj.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 flex items-center gap-1 cursor-pointer"
+                    className="text-blue-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition cursor-pointer flex items-center gap-1"
                   >
                     Live <FaExternalLinkAlt size={12} />
                   </a>
@@ -112,24 +117,28 @@ function Projects() {
                   href={proj.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-600 dark:text-zinc-300 flex items-center gap-1"
+                  className="text-zinc-600 dark:text-zinc-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition cursor-pointer flex items-center gap-1"
                 >
                   GitHub <FaGithub />
                 </a>
               </div>
             </div>
-            <p className="text-sm mt-2">{proj.description}</p>
-            <div className="flex flex-wrap gap-2 mt-3 text-sm">
-              {proj.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="flex items-center gap-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-2 py-1 rounded"
-                >
-                  {techIconMap[tech] ?? ""} <span>{tech}</span>
-                </span>
-              ))}
+
+            {/* Project Description and Tech Stack */}
+            <div className="mt-2">
+              <p className="text-sm leading-relaxed">{proj.description}</p>
+              <div className="flex flex-wrap gap-2 mt-3 text-sm">
+                {proj.stack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="flex items-center gap-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-2 py-1 rounded"
+                  >
+                    {techIconMap[tech] ?? ""} <span>{tech}</span>
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
