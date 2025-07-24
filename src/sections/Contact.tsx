@@ -29,6 +29,7 @@ function Contact() {
           <a
             href="https://github.com/ParthPatel00"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition
 "
           >
@@ -38,8 +39,9 @@ function Contact() {
         <li className="flex items-center gap-2">
           <FaLinkedin className="text-blue-600" />
           <a
-            href="https://www.linkedin.com/in/parth-patel00"
+            href="https://www.linkedin.com/in/parth-patel-sjsu"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition
 "
           >

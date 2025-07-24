@@ -25,9 +25,23 @@ function About() {
           never looked back. I find real joy in creating, problem-solving, and
           building software that’s not just functional, but also elegant and
           efficient. This is what excites me every day. I’d love to connect with
-          like-minded individuals—feel free to reach out via LinkedIn or email!
+          like-minded individuals—feel free to reach out via{" "}
+          <a
+            href="https://linkedin.com/in/parth-patel-sjsu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+          >
+            LinkedIn
+          </a>{" "}
+          or{" "}
+          <a
+            href="mailto:patelsparth00@gmail.com"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+          >
+            Email!
+          </a>
         </p>
-
         <a
           href="/Resume_Parth.pdf"
           target="_blank"
