@@ -21,12 +21,11 @@ function About() {
         </p>
         <p className="text-sm sm:text-base leading-relaxed mt-5">
           My journey began with doing math competitions and led to earning a
-          math degree. Along the waym I discovered in that path I discovered a
-          passion for coding—and I’ve never looked back. I find real joy in
-          creating, problem-solving, and building software that’s not just
-          functional, but also elegant and efficient. This is what excites me
-          every day. I’d love to connect with like-minded individuals—feel free
-          to reach out via LinkedIn or email!
+          math degree. Along the way, I discovered a passion for coding—and I’ve
+          never looked back. I find real joy in creating, problem-solving, and
+          building software that’s not just functional, but also elegant and
+          efficient. This is what excites me every day. I’d love to connect with
+          like-minded individuals—feel free to reach out via LinkedIn or email!
         </p>
 
         <a
