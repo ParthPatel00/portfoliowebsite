@@ -1,41 +1,84 @@
-import { Link, useLocation } from "react-router-dom";
-import clsx from "clsx";
+import { useEffect, useState } from "react";
+import { Moon, Sun, Menu, X } from "lucide-react";
+import { toggleDarkMode, loadStoredTheme } from "../theme";
 
-const navItems = [
-  { name: "About", path: "/" },
-  { name: "Tech Stack", path: "/tech" },
-  { name: "Work Experience", path: "/work" },
-  { name: "Projects", path: "/projects" },
-  { name: "Contact", path: "/contact" },
+const navLinks = [
+  { name: "About", id: "about" },
+  { name: "Tech Stack", id: "tech" },
+  { name: "Work Experience", id: "work" },
+  { name: "Projects", id: "projects" },
+  { name: "Contact", id: "contact" },
 ];
 
 function Navbar() {
-  const location = useLocation();
+  const [isDark, setIsDark] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    loadStoredTheme();
+    setIsDark(document.documentElement.classList.contains("dark"));
+  }, []);
+
+  const toggleTheme = () => {
+    toggleDarkMode();
+    setIsDark(!isDark);
+  };
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <nav className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 shadow-sm">
+    <nav className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 shadow-sm sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-zinc-800 dark:text-zinc-100">
-          Parth Patel
-        </h1>
-        <ul className="flex space-x-6 text-sm font-medium">
-          {navItems.map((item) => (
-            <li key={item.path}>
-              <Link
-                to={item.path}
-                className={clsx(
-                  "hover:text-blue-500 transition-colors",
-                  location.pathname === item.path
-                    ? "text-blue-500"
-                    : "text-zinc-700 dark:text-zinc-300"
-                )}
+        <h1 className="text-xl font-bold">Parth Patel</h1>
+
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex space-x-6 text-sm font-medium">
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                className="hover:text-blue-500 transition-colors"
               >
-                {item.name}
-              </Link>
+                {link.name}
+              </a>
             </li>
           ))}
         </ul>
+
+        {/* Right controls */}
+        <div className="flex items-center space-x-4">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded hover:bg-zinc-200 dark:hover:bg-zinc-800"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
+          {/* Mobile Menu Toggle */}
+          <button className="md:hidden p-2" onClick={toggleMenu}>
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Nav */}
+      {isOpen && (
+        <ul className="md:hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white dark:bg-zinc-900">
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                className="block py-1 hover:text-blue-500 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   );
 }
