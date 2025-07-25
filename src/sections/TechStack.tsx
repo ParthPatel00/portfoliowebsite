@@ -9,7 +9,6 @@ import {
   SiOracle,
   SiFirebase,
   SiCplusplus,
-  SiNodedotjs,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { SiGooglecloud } from "react-icons/si";
