@@ -24,6 +24,15 @@ const categories = {
     { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
     { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
     { name: "C/C++", icon: <SiCplusplus className="text-blue-700" /> },
+    {
+      name: "Java",
+      icon: (
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          className="w-5 h-5 inline max-w-full object-contain"
+        />
+      ),
+    },
   ],
   Frontend: [{ name: "React", icon: <SiReact className="text-cyan-400" /> }],
   Backend: [
@@ -31,7 +40,15 @@ const categories = {
       name: "Flask",
       icon: <SiFlask className="text-zinc-600 dark:text-zinc-300" />,
     },
-    { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
+    {
+      name: "Next.js",
+      icon: (
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+          className="w-5 h-5 inline max-w-full object-contain"
+        />
+      ),
+    },
   ],
   "Cloud & DevOps": [
     { name: "AWS", icon: <FaAws className="text-orange-500" /> },
@@ -78,19 +95,19 @@ function TechStack() {
               repeatType: "mirror",
               ease: "easeInOut",
             }}
-            className="w-56 h-56 rounded-full bg-zinc-100 dark:bg-zinc-800 flex flex-col justify-center items-center text-sm p-4 shadow-lg transition-all hover:scale-105 hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 hover:text-white"
+            className="w-64 h-64 md:w-72 md:h-72 rounded-full bg-zinc-100 dark:bg-zinc-800 flex flex-col justify-center items-center text-sm p-4 shadow-lg transition-all hover:scale-105 hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 hover:text-white"
             style={{
               transform: `translateX(${
                 (index % 2 === 0 ? -1 : 1) * (index * 10)
               }px)`,
             }}
           >
-            <h3 className="font-semibold text-base mb-2">{category}</h3>
+            <h3 className="font-semibold text-xl mb-5">{category}</h3>
             <div className="flex flex-wrap justify-center gap-2">
               {items.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex items-center gap-1 px-2 py-1 rounded-full bg-zinc-200 dark:bg-zinc-700 text-xs"
+                  className="flex items-center gap-1 px-2 py-1 rounded-full bg-zinc-200 dark:bg-zinc-700 text-lg"
                 >
                   {tech.icon}
                   <span>{tech.name}</span>

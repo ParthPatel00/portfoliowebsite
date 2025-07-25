@@ -7,4 +7,5 @@ html {
 
 html, body {
   overflow-x: hidden;
+  overscroll-behavior: none;
 }

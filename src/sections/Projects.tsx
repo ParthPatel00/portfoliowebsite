@@ -110,7 +110,7 @@ function Projects() {
                     href={proj.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition cursor-pointer flex items-center gap-1"
+                    className="text-blue-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition cursor-pointer flex items-center gap-2 pb-1"
                   >
                     Live <FaExternalLinkAlt size={12} />
                   </a>
@@ -119,7 +119,7 @@ function Projects() {
                   href={proj.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-600 dark:text-zinc-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition cursor-pointer flex items-center gap-1"
+                  className="text-zinc-600 dark:text-zinc-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition cursor-pointer flex items-center gap-2"
                 >
                   GitHub <FaGithub />
                 </a>
