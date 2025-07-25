@@ -6,8 +6,8 @@ function About() {
       {/* Background blob */}
 
       {/* Actual content */}
-      <div className="relative z-10 pl-3 pr-3">
-        <p className="text-sm sm:text-base leading-relaxed">
+      <div className="relative z-10 pl-3 pr-3 ">
+        <p className="text-sm sm:text-base leading-relaxed  ">
           I'm <strong>Parth Patel</strong>, a software engineer based in San
           Jose, CA currently pursuing a Master’s in Software Engineering at San
           Jose State University, with a Bachelor of Science in Mathematics and

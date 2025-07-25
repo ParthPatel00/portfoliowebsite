@@ -8,7 +8,12 @@ import Contact from "./sections/Contact.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import FadeInSection from "./components/FadeInSection";
 import BackgroundBlob from "./components/BackgroundBlob.tsx";
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
+
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 transition-colors scroll-smooth overflow-x-hidden">
       <Navbar />
