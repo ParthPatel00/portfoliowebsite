@@ -64,7 +64,7 @@ const categories = {
 
 function TechStack() {
   return (
-    <section className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto px-4">
+    <section className="relative overflow-hidden flex flex-col items-center justify-center text-center max-w-6xl mx-auto px-4">
       <SectionHeader text="Tech Stack" />
 
       <div className="relative flex flex-wrap justify-center gap-6 mt-10">

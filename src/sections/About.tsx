@@ -1,18 +1,12 @@
 import SectionHeader from "../components/SectionHeader";
-import BackgroundBlob from "../components/BackgroundBlob";
 function About() {
   return (
-    <section className="flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
+    <section className=" relative overflow-hidden flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
       <SectionHeader text="About Me" />
       {/* Background blob */}
-      <BackgroundBlob className="-top-20 -left-24 w-72 h-72" />
-      <BackgroundBlob
-        className="-bottom-16 right-12 w-60 h-60"
-        color="from-pink-500 via-yellow-500 to-orange-500"
-      />
 
       {/* Actual content */}
-      <div className="relative z-10">
+      <div className="relative z-10 pl-3 pr-3">
         <p className="text-sm sm:text-base leading-relaxed">
           I'm <strong>Parth Patel</strong>, a software engineer based in San
           Jose, CA currently pursuing a Master’s in Software Engineering at San

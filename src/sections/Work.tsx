@@ -1,15 +1,10 @@
 import SectionHeader from "../components/SectionHeader";
-import BackgroundBlob from "../components/BackgroundBlob";
 function Work() {
   return (
-    <section className="flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
+    <section className="relative overflow-hidden flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
       <SectionHeader text="Work Experience" />
-      <BackgroundBlob
-        className="-bottom-160 left-2 w-30 h-30"
-        color="from-green-400 via-green-500 to-blue-500"
-      />
 
-      <div className="mb-6">
+      <div className="mb-6 pr-3 pl-3">
         <h3 className="text-xl font-semibold">Software Engineer @ Deloitte</h3>
         <p className="text-sm text-zinc-500 leading-relaxed dark:text-zinc-400">
           July 2022 – Nov 2024

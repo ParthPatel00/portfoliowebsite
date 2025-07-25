@@ -4,7 +4,6 @@ import awsLogo from "../assets/aws-color.svg";
 import geminiLogo from "../assets/gemini-color.svg";
 import SectionHeader from "../components/SectionHeader";
 import { motion } from "framer-motion";
-import BackgroundBlob from "../components/BackgroundBlob";
 const techIconMap: Record<string, React.ReactNode> = {
   React: <SiReact className="text-cyan-400" />,
   TypeScript: <SiTypescript className="text-blue-500" />,
@@ -91,12 +90,9 @@ const projects = [
 
 function Projects() {
   return (
-    <section className="w-full">
+    <section className="relative overflow-hidden w-full">
       <SectionHeader text="Projects" />
-      <BackgroundBlob
-        className="-bottom-300 -right-60 w-80 h-50"
-        color="from-pink-400 via-red-500 to-white-500"
-      />
+
       <div className="max-w-4xl mx-auto px-4 space-y-8">
         {projects.map((proj) => (
           <motion.div
