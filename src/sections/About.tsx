@@ -37,7 +37,7 @@ function About() {
           </a>
         </p>
         <a
-          href="/Resume_Parth.pdf"
+          href="Resume_Parth.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block mt-6 px-5 py-2 text-white font-medium rounded-lg shadow bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-purple-500 hover:to-pink-500 transition-transform transform hover:scale-105"
