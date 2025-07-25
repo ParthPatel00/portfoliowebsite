@@ -11,6 +11,7 @@ import BackgroundBlob from "./components/BackgroundBlob.tsx";
 import { useEffect } from "react";
 function App() {
   useEffect(() => {
+    // Force dark mode regardless of system preference
     document.documentElement.classList.add("dark");
   }, []);
 
