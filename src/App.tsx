@@ -20,7 +20,10 @@ function App() {
       <Navbar />
       <main className="... relative overflow-hidden space-y-20">
         <BackgroundBlob className="absolute -top-[120px] -left-[100px] w-[288px] h-[288px] z-0" />
-
+        <BackgroundBlob
+          className="absolute top-[300px] left-[300px] w-[150px] h-[150px] z-0"
+          color="from-orange-500 via-orange-500 to-blue-500"
+        />
         <section id="about" className="scroll-mt-24 mt-20">
           <FadeInSection>
             <About />

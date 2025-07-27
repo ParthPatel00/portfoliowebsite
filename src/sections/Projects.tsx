@@ -4,6 +4,8 @@ import awsLogo from "../assets/aws-color.svg";
 import geminiLogo from "../assets/gemini-color.svg";
 import SectionHeader from "../components/SectionHeader";
 import { motion } from "framer-motion";
+
+// Icon map
 const techIconMap: Record<string, React.ReactNode> = {
   React: <SiReact className="text-cyan-400" />,
   TypeScript: <SiTypescript className="text-blue-500" />,
@@ -43,9 +45,30 @@ const techIconMap: Record<string, React.ReactNode> = {
       className="w-5 h-5 inline"
     />
   ),
+  PostgreSQL: (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+      className="w-5 h-5 inline"
+    />
+  ),
+  Supabase: (
+    <img
+      src="https://raw.githubusercontent.com/Supabase/Supabase/master/packages/common/assets/images/supabase-logo-icon.svg"
+      className="w-5 h-5 inline"
+    />
+  ),
 };
 
+// Your projects
 const projects = [
+  {
+    name: "TenMunches",
+    description:
+      "Discover AI-curated food & drink recommendations across 20 categories in San Francisco. This platform uncovers hidden gems by analyzing 10,000+ Google reviews and 200+ food articles. Using a custom Python NLP pipeline, it surfaces top spots via sentiment analysis of real testimonials.",
+    live: "https://ten-munches.vercel.app/",
+    github: "https://github.com/ParthPatel00/TenMunches",
+    stack: ["React", "TypeScript", "Python", "PostgreSQL", "Supabase"],
+  },
   {
     name: "QuizMaster",
     description:
@@ -88,18 +111,40 @@ const projects = [
   },
 ];
 
+// Animation Variants
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.75, // 🔁 adjust this delay to your preference
+    },
+  },
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
 function Projects() {
   return (
     <section className="relative overflow-hidden w-full">
       <SectionHeader text="Projects" />
 
-      <div className="max-w-4xl mx-auto px-4 space-y-8">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="max-w-4xl mx-auto px-4 space-y-8"
+      >
         {projects.map((proj) => (
           <motion.div
             key={proj.name}
+            variants={fadeInUp}
             className="bg-zinc-100 dark:bg-zinc-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-all"
             whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: "spring", stiffness: 200 }}
           >
             {/* Top Row: Title + Links */}
             <div className="flex items-center justify-between flex-wrap gap-y-2">
@@ -142,7 +187,7 @@ function Projects() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
