@@ -3,10 +3,10 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import SectionHeader from "../components/SectionHeader";
 function Contact() {
   return (
-    <section className="relative overflow-hidden flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
+    <section className="relative overflow-hidden flex flex-col items-center justify-center text-center max-w-2xl mx-auto pb-10">
       <SectionHeader text="Contact" />
 
-      <p className="mb-4">
+      <p className="mb-4 p-2">
         Feel free to reach out if you'd like to collaborate or connect!
       </p>
       <ul className="space-y-3 text-sm">

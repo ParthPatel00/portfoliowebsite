@@ -104,13 +104,13 @@ function Projects() {
             {/* Top Row: Title + Links */}
             <div className="flex items-center justify-between flex-wrap gap-y-2">
               <h3 className="text-xl font-semibold">{proj.name}</h3>
-              <div className="space-x-4 text-sm">
+              <div className="text-sm">
                 {proj.live && (
                   <a
                     href={proj.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition cursor-pointer flex items-center gap-2 pb-1"
+                    className="text-blue-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transition cursor-pointer flex items-center gap-2 "
                   >
                     Live <FaExternalLinkAlt size={12} />
                   </a>

@@ -87,7 +87,7 @@ function TechStack() {
         {Object.entries(categories).map(([category, items], index) => (
           <motion.div
             key={category}
-            animate={{ y: [0, -15, 0] }}
+            animate={{ y: [0, -35, 0] }}
             transition={{
               duration: 2.5 + (index % 3),
               repeat: Infinity,
