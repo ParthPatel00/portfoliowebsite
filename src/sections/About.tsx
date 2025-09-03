@@ -67,14 +67,14 @@ function About() {
           {/* Description */}
           <motion.div variants={itemVariants} className="space-y-4">
             <p className="text-lg text-slate-300 leading-relaxed">
-              I'm a passionate software engineer currently pursuing a Master's
-              in Software Engineering at
+              I'm a software engineer on a journey to deepen my craft, currently
+              pursuing a Master's in Software Engineering at
               <span className="text-emerald-400 font-semibold">
                 {" "}
                 San Jose State University
               </span>
-              , with a Bachelor of Science in Mathematics and Statistics from
-              the University of Toronto.
+              , after 2 years of industry experience and a Bachelor's in
+              Mathematics and Statistics from the University of Toronto.
             </p>
             <p className="text-lg text-slate-300 leading-relaxed">
               My journey from math competitions to software engineering has

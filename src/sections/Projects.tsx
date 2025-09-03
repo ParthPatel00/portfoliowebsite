@@ -65,7 +65,7 @@ const projects = [
     live: "https://ten-munches.vercel.app/",
     github: "https://github.com/ParthPatel00/TenMunches",
     stack: ["React", "TypeScript", "Python", "PostgreSQL", "Supabase"],
-    category: "Full Stack",
+    category: ["Full Stack", "AI/ML"],
     featured: true,
     image: "🍽️",
   },
@@ -84,7 +84,7 @@ const projects = [
       "Gemini API",
       "Firebase",
     ],
-    category: "AI/ML",
+    category: ["Full Stack", "Cloud"],
     featured: true,
     image: "🧠",
   },
@@ -146,6 +146,8 @@ function Projects() {
         return "bg-slate-700 text-slate-200";
       case "AI/ML":
         return "bg-emerald-900 text-emerald-200";
+      case "Cloud":
+        return "bg-blue-900 text-blue-200";
       case "Data Science":
         return "bg-slate-600 text-slate-200";
       default:
@@ -184,13 +186,26 @@ function Projects() {
                         <h3 className="text-2xl font-bold text-white mb-2">
                           {proj.name}
                         </h3>
-                        <span
-                          className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(
-                            proj.category
-                          )}`}
-                        >
-                          {proj.category}
-                        </span>
+                        {Array.isArray(proj.category) ? (
+                          proj.category.map((cat, idx) => (
+                            <span
+                              key={idx}
+                              className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(
+                                cat
+                              )} ${idx > 0 ? "ml-2" : ""}`}
+                            >
+                              {cat}
+                            </span>
+                          ))
+                        ) : (
+                          <span
+                            className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(
+                              proj.category as string
+                            )}`}
+                          >
+                            {proj.category}
+                          </span>
+                        )}
                       </div>
                     </div>
                     <div className="flex gap-2">
@@ -272,13 +287,26 @@ function Projects() {
                         <h4 className="text-lg font-bold text-white">
                           {proj.name}
                         </h4>
-                        <span
-                          className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${getCategoryColor(
-                            proj.category
-                          )}`}
-                        >
-                          {proj.category}
-                        </span>
+                        {Array.isArray(proj.category) ? (
+                          proj.category.map((cat, idx) => (
+                            <span
+                              key={idx}
+                              className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${getCategoryColor(
+                                cat
+                              )} ${idx > 0 ? "ml-1" : ""}`}
+                            >
+                              {cat}
+                            </span>
+                          ))
+                        ) : (
+                          <span
+                            className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${getCategoryColor(
+                              proj.category as string
+                            )}`}
+                          >
+                            {proj.category}
+                          </span>
+                        )}
                       </div>
                     </div>
 

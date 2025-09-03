@@ -104,7 +104,7 @@ function Contact() {
               <p className="text-lg text-slate-300 leading-relaxed">
                 I'm always interested in new opportunities, collaborations, and
                 interesting projects. Whether you have a question or just want
-                to say hi, I'll try my best to get back to you!
+                to say hi, I promise to get back to you!
               </p>
             </div>
 

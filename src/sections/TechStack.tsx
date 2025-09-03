@@ -11,6 +11,7 @@ import {
   SiCplusplus,
   SiNextdotjs,
   SiGooglecloud,
+  SiSupabase,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import azureLogo from "../assets/azure-2.svg";
@@ -49,6 +50,11 @@ const categories = {
         />
       ),
       level: "Intermediate",
+    },
+    {
+      name: "SQL",
+      icon: <SiMysql className="text-blue-600" />,
+      level: "Expert",
     },
   ],
   Frontend: [
@@ -99,6 +105,11 @@ const categories = {
     {
       name: "Firebase",
       icon: <SiFirebase className="text-yellow-400" />,
+      level: "Advanced",
+    },
+    {
+      name: "Supabase",
+      icon: <SiSupabase className="text-green-500" />,
       level: "Advanced",
     },
   ],

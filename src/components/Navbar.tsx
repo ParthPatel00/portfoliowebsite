@@ -45,10 +45,15 @@ function Navbar() {
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-3"
+          className="flex items-center gap-3 cursor-pointer"
+          onClick={() => (window.location.href = "/")}
         >
-          <div className="w-10 h-10 bg-slate-800 border border-slate-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">PP</span>
+          <div className="w-10 h-10 bg-slate-800 border border-slate-600 rounded-lg flex items-center justify-center overflow-hidden">
+            <img
+              src="/Pfavicon.png"
+              alt="Parth Patel"
+              className="w-8 h-8 object-contain"
+            />
           </div>
           <h1 className="text-xl font-bold text-white">Parth Patel</h1>
         </motion.div>
