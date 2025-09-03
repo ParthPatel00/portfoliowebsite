@@ -1,6 +1,6 @@
 import SectionHeader from "../components/SectionHeader";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import {
   SiPython,
   SiJavascript,

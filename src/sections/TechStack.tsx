@@ -24,22 +24,18 @@ const categories = {
     {
       name: "Python",
       icon: <SiPython className="text-yellow-500" />,
-      level: "Expert",
     },
     {
       name: "JavaScript",
       icon: <SiJavascript className="text-yellow-400" />,
-      level: "Expert",
     },
     {
       name: "TypeScript",
       icon: <SiTypescript className="text-blue-500" />,
-      level: "Expert",
     },
     {
       name: "C/C++",
       icon: <SiCplusplus className="text-blue-700" />,
-      level: "Advanced",
     },
     {
       name: "Java",
@@ -49,90 +45,74 @@ const categories = {
           className="w-5 h-5 inline max-w-full object-contain"
         />
       ),
-      level: "Intermediate",
     },
     {
       name: "SQL",
       icon: <SiMysql className="text-blue-600" />,
-      level: "Expert",
     },
   ],
   Frontend: [
     {
       name: "React",
       icon: <SiReact className="text-cyan-400" />,
-      level: "Expert",
     },
     {
       name: "Next.js",
       icon: <SiNextdotjs className="text-gray-800 dark:text-white" />,
-      level: "Advanced",
     },
   ],
   Backend: [
     {
       name: "Flask",
       icon: <SiFlask className="text-zinc-600 dark:text-zinc-300" />,
-      level: "Expert",
     },
     {
       name: "Node.js",
       icon: <SiJavascript className="text-green-500" />,
-      level: "Advanced",
     },
   ],
   "Cloud & DevOps": [
     {
       name: "AWS",
       icon: <FaAws className="text-orange-500" />,
-      level: "Expert",
     },
     {
       name: "Azure",
       icon: <img src={azureLogo} className="w-5 h-5 inline" />,
-      level: "Advanced",
     },
     {
       name: "GCP",
       icon: <SiGooglecloud className="text-blue-400" />,
-      level: "Intermediate",
     },
     {
       name: "Docker",
       icon: <SiDocker className="text-blue-500" />,
-      level: "Expert",
     },
     {
       name: "Firebase",
       icon: <SiFirebase className="text-yellow-400" />,
-      level: "Advanced",
     },
     {
       name: "Supabase",
       icon: <SiSupabase className="text-green-500" />,
-      level: "Advanced",
     },
   ],
   Databases: [
     {
       name: "MySQL",
       icon: <SiMysql className="text-blue-600" />,
-      level: "Expert",
     },
     {
       name: "Oracle",
       icon: <SiOracle className="text-red-600" />,
-      level: "Advanced",
     },
     {
       name: "DynamoDB",
       icon: <FaAws className="text-orange-500" />,
-      level: "Advanced",
     },
     {
       name: "PostgreSQL",
       icon: <SiMysql className="text-blue-500" />,
-      level: "Advanced",
     },
   ],
   "AI & APIs": [
