@@ -1,5 +1,5 @@
 import { MdEmail, MdLocationOn } from "react-icons/md";
-import { FaGithub, FaLinkedin, FaTwitter, FaPaperPlane } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPaperPlane } from "react-icons/fa";
 
 import SectionHeader from "../components/SectionHeader";
 import { motion } from "framer-motion";

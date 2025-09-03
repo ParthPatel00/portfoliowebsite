@@ -53,14 +53,6 @@ function Work() {
     offset: ["start end", "end start"],
   });
 
-  const [containerHeight, setContainerHeight] = useState(0);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      setContainerHeight(containerRef.current.scrollHeight);
-    }
-  }, []);
-
   const dotPosition = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   const workExperiences: WorkExperience[] = [
