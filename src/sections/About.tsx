@@ -1,70 +1,223 @@
-import SectionHeader from "../components/SectionHeader";
 import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaGraduationCap,
+  FaCode,
+} from "react-icons/fa";
 
 function About() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <section className="relative overflow-hidden flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
-      <SectionHeader text="About Me" />
+    <section className="relative min-h-screen flex items-center justify-center py-20 px-4">
+      {/* Subtle Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-slate-800/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-slate-700/5 rounded-full blur-3xl"></div>
+      </div>
 
-      <div className="relative z-10 px-3">
-        {/* Animated first paragraph */}
-        <motion.p
-          className="text-sm sm:text-base leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
+      <div className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        {/* Left Column - Content */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="space-y-8"
         >
-          I'm <strong>Parth Patel</strong>, a software engineer based in San
-          Jose, CA currently pursuing a Master’s in Software Engineering at San
-          Jose State University, with a Bachelor of Science in Mathematics and
-          Statistics from the University of Toronto.
-        </motion.p>
+          {/* Greeting */}
+          <motion.div variants={itemVariants} className="space-y-4">
+            <div className="flex items-center gap-3 text-lg text-slate-400 font-medium">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+              <span>Hello, I'm</span>
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
+              <span className="block">Parth</span>
+              <span className="block text-slate-300">Patel</span>
+            </h1>
+          </motion.div>
 
-        {/* Animated second paragraph */}
-        <motion.p
-          className="text-sm sm:text-base leading-relaxed mt-5"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          My journey began with doing math competitions and led to earning a
-          math degree. Along the way, I discovered a passion for coding and I’ve
-          never looked back. I find real joy in creating, problem-solving, and
-          building software that’s not just functional, but also elegant and
-          efficient. This is what excites me every day. I’d love to connect with
-          like-minded individuals—feel free to reach out via{" "}
-          <a
-            href="https://linkedin.com/in/parth-patel-sjsu/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+          {/* Title */}
+          <motion.div variants={itemVariants} className="space-y-2">
+            <h2 className="text-2xl lg:text-3xl font-semibold text-slate-200">
+              Software Engineer & AI Researcher
+            </h2>
+            <div className="flex items-center gap-2 text-slate-400">
+              <FaMapMarkerAlt className="text-slate-500" />
+              <span>San Jose, CA</span>
+            </div>
+          </motion.div>
+
+          {/* Description */}
+          <motion.div variants={itemVariants} className="space-y-4">
+            <p className="text-lg text-slate-300 leading-relaxed">
+              I'm a passionate software engineer currently pursuing a Master's
+              in Software Engineering at
+              <span className="text-emerald-400 font-semibold">
+                {" "}
+                San Jose State University
+              </span>
+              , with a Bachelor of Science in Mathematics and Statistics from
+              the University of Toronto.
+            </p>
+            <p className="text-lg text-slate-300 leading-relaxed">
+              My journey from math competitions to software engineering has
+              taught me the power of
+              <span className="text-slate-200 font-semibold">
+                {" "}
+                elegant problem-solving
+              </span>{" "}
+              and
+              <span className="text-emerald-400 font-semibold">
+                {" "}
+                systematic innovation
+              </span>
+              . I love building software that's not just functional, but also
+              robust and maintainable.
+            </p>
+          </motion.div>
+
+          {/* Education & Current Role */}
+          <motion.div
+            variants={itemVariants}
+            className="grid sm:grid-cols-2 gap-4"
           >
-            LinkedIn
-          </a>{" "}
-          or{" "}
-          <a
-            href="mailto:patelsparth00@gmail.com"
-            className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
-          >
-            Email!
-          </a>
-        </motion.p>
+            <div className="bg-slate-800/30 backdrop-blur-sm rounded-lg p-4 border border-slate-700/30">
+              <div className="flex items-center gap-3 mb-2">
+                <FaGraduationCap className="text-slate-400 text-xl" />
+                <h3 className="font-semibold text-slate-200">Education</h3>
+              </div>
+              <p className="text-sm text-slate-300">MS Software Engineering</p>
+              <p className="text-xs text-slate-400">
+                San Jose State University
+              </p>
+            </div>
+            <div className="bg-slate-800/30 backdrop-blur-sm rounded-lg p-4 border border-slate-700/30">
+              <div className="flex items-center gap-3 mb-2">
+                <FaCode className="text-emerald-400 text-xl" />
+                <h3 className="font-semibold text-slate-200">Current Role</h3>
+              </div>
+              <p className="text-sm text-slate-300">AI Research Assistant</p>
+              <p className="text-xs text-slate-400">SJSU Research Foundation</p>
+            </div>
+          </motion.div>
 
-        {/* Animated Resume Button */}
-        <motion.a
-          href="Resume_Parth.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mt-6 px-5 py-2 text-white font-medium rounded-lg shadow bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-purple-500 hover:to-pink-500 transition-transform transform hover:scale-105"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          viewport={{ once: true }}
+          {/* CTA Buttons */}
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <motion.a
+              href="Resume_Parth.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative px-8 py-4 bg-slate-800 border border-slate-600 rounded-lg font-semibold text-white overflow-hidden hover:bg-slate-700 transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                View Resume
+                <svg
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </span>
+            </motion.a>
+
+            <motion.a
+              href="#contact"
+              className="px-8 py-4 border-2 border-slate-600 rounded-lg font-semibold text-slate-300 hover:border-emerald-400 hover:text-emerald-400 transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Get In Touch
+            </motion.a>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div variants={itemVariants} className="flex gap-4">
+            <motion.a
+              href="https://github.com/ParthPatel00"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-slate-800/30 backdrop-blur-sm rounded-lg border border-slate-700/30 text-slate-400 hover:text-white hover:border-slate-500 transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FaGithub className="text-xl" />
+            </motion.a>
+            <motion.a
+              href="https://linkedin.com/in/parth-patel-sjsu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-slate-800/30 backdrop-blur-sm rounded-lg border border-slate-700/30 text-slate-400 hover:text-white hover:border-slate-500 transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FaLinkedin className="text-xl" />
+            </motion.a>
+            <motion.a
+              href="mailto:patelsparth00@gmail.com"
+              className="p-3 bg-slate-800/30 backdrop-blur-sm rounded-lg border border-slate-700/30 text-slate-400 hover:text-white hover:border-slate-500 transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FaEnvelope className="text-xl" />
+            </motion.a>
+          </motion.div>
+        </motion.div>
+
+        {/* Right Column - Hero Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="relative hidden lg:block"
         >
-          📄 View Resume
-        </motion.a>
+          <div className="relative w-full h-96 max-w-md mx-auto">
+            {/* Hero Image - Seamlessly blended */}
+            <img
+              src="/hero-character.png"
+              alt="Professional developer at work"
+              className="w-full h-full object-contain drop-shadow-2xl"
+            />
+
+            {/* Subtle floating particles around the image */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-4 right-4 w-1 h-1 bg-slate-500 rounded-full opacity-30 animate-pulse"></div>
+              <div
+                className="absolute top-1/3 left-4 w-1 h-1 bg-emerald-500 rounded-full opacity-25 animate-pulse"
+                style={{ animationDelay: "1s" }}
+              ></div>
+              <div
+                className="absolute bottom-1/4 right-6 w-1 h-1 bg-slate-400 rounded-full opacity-20 animate-pulse"
+                style={{ animationDelay: "2s" }}
+              ></div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
