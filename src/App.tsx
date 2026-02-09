@@ -26,12 +26,12 @@ function App() {
           <Work />
         </section>
 
-        <section id="tech" className="scroll-mt-24">
-          <TechStack />
-        </section>
-
         <section id="projects" className="scroll-mt-24">
           <Projects />
+        </section>
+
+        <section id="tech" className="scroll-mt-24">
+          <TechStack />
         </section>
 
         <section id="contact" className="scroll-mt-24">

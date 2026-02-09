@@ -135,8 +135,19 @@ const categories = {
 };
 
 function TechStack() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
 
@@ -151,21 +162,19 @@ function TechStack() {
 
       <SectionHeader text="Tech Stack" />
 
-      <div className="mt-16 relative z-10">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mt-16 relative z-10"
+      >
         {/* Technology Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {Object.entries(categories).map(([category, items], cardIndex) => (
+          {Object.entries(categories).map(([category, items]) => (
             <motion.div
               key={category}
               variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.5,
-                delay: cardIndex * 0.1,
-                ease: "easeOut",
-              }}
               className="group relative bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/30 hover:border-emerald-400/50 transition-all duration-300 overflow-hidden shadow-2xl"
             >
               {/* macOS Window Header */}
@@ -213,7 +222,7 @@ function TechStack() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

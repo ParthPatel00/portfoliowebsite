@@ -56,7 +56,7 @@ function About() {
           {/* Title */}
           <motion.div variants={itemVariants} className="space-y-2">
             <h2 className="text-2xl lg:text-3xl font-semibold text-slate-200">
-              Software Engineer & AI Researcher
+              Software Engineer
             </h2>
             <div className="flex items-center gap-2 text-slate-400">
               <FaMapMarkerAlt className="text-slate-500" />
@@ -113,7 +113,7 @@ function About() {
                 <FaCode className="text-emerald-400 text-xl" />
                 <h3 className="font-semibold text-slate-200">Current Role</h3>
               </div>
-              <p className="text-sm text-slate-300">AI Research Assistant</p>
+              <p className="text-sm text-slate-300">Research Assistant</p>
               <p className="text-xs text-slate-400">SJSU Research Foundation</p>
             </div>
           </motion.div>
