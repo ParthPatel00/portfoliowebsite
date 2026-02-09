@@ -135,102 +135,37 @@ const categories = {
 };
 
 function TechStack() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-    },
-  };
-
   const cardVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.95,
-      y: 20,
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-    },
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
     <section className="relative py-20 px-4 max-w-7xl mx-auto overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            y: [-15, 15, -15],
-            x: [-5, 5, -5],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-20 left-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            y: [-15, 15, -15],
-            x: [-5, 5, -5],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute top-40 right-20 w-32 h-32 bg-slate-500/5 rounded-full blur-2xl"
-        />
-        <motion.div
-          animate={{
-            y: [-15, 15, -15],
-            x: [-5, 5, -5],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 4,
-          }}
-          className="absolute bottom-20 left-1/3 w-48 h-48 bg-emerald-400/5 rounded-full blur-3xl"
-        />
+      {/* Subtle Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-40 right-20 w-32 h-32 bg-slate-500/5 rounded-full blur-2xl" />
+        <div className="absolute bottom-20 left-1/3 w-48 h-48 bg-emerald-400/5 rounded-full blur-3xl" />
       </div>
 
       <SectionHeader text="Tech Stack" />
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{
-          staggerChildren: 0.2,
-          delayChildren: 0.4,
-          duration: 0.8,
-          ease: "easeOut",
-        }}
-        className="mt-16 relative z-10"
-      >
+      <div className="mt-16 relative z-10">
         {/* Technology Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {Object.entries(categories).map(([category, items]) => (
+          {Object.entries(categories).map(([category, items], cardIndex) => (
             <motion.div
               key={category}
+              variants={cardVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 15,
-                duration: 1.2,
+                duration: 0.5,
+                delay: cardIndex * 0.1,
                 ease: "easeOut",
               }}
-              style={{ transformOrigin: "center center" }}
               className="group relative bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/30 hover:border-emerald-400/50 transition-all duration-300 overflow-hidden shadow-2xl"
             >
               {/* macOS Window Header */}
@@ -257,26 +192,10 @@ function TechStack() {
               <div className="p-6">
                 {/* Technologies Grid */}
                 <div className="grid grid-cols-2 gap-3">
-                  {items.map((tech, index) => (
-                    <motion.div
+                  {items.map((tech) => (
+                    <div
                       key={tech.name}
-                      initial={{ opacity: 0, scale: 0.9, y: 15 }}
-                      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        delay: 0.6 + index * 0.03,
-                        type: "spring",
-                        stiffness: 80,
-                        damping: 12,
-                        duration: 1.0,
-                        ease: "easeOut",
-                      }}
-                      whileHover={{
-                        scale: 1.05,
-                        y: -2,
-                        transition: { duration: 0.2 },
-                      }}
-                      className="group/tech relative bg-slate-700/50 backdrop-blur-sm rounded-xl p-3 border border-slate-600/30 hover:border-emerald-400/50 transition-all duration-300 cursor-pointer"
+                      className="group/tech relative bg-slate-700/50 backdrop-blur-sm rounded-xl p-3 border border-slate-600/30 hover:border-emerald-400/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:-translate-y-0.5"
                     >
                       {/* Tech Icon and Name */}
                       <div className="flex items-center gap-3">
@@ -287,14 +206,14 @@ function TechStack() {
                           {tech.name}
                         </span>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
