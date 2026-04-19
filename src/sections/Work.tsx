@@ -122,7 +122,7 @@ function Work() {
           <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-xs text-slate-400 font-medium">
             {year}
           </div>
-        </div>
+        </div>,
       );
     }
     return markers;
