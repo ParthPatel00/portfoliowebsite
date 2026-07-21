@@ -1,40 +1,39 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import About from "./sections/About.tsx";
-import TechStack from "./sections/TechStack.tsx";
 import Work from "./sections/Work.tsx";
 import Projects from "./sections/Projects.tsx";
+import Achievements from "./sections/Achievements.tsx";
+import TechStack from "./sections/TechStack.tsx";
 import Contact from "./sections/Contact.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
-import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    // Force dark mode regardless of system preference
-    document.documentElement.classList.add("dark");
-  }, []);
-
   return (
-    <div className="min-h-screen bg-slate-900 text-white transition-colors scroll-smooth overflow-x-hidden">
+    <div className="min-h-screen bg-paper font-sans text-ink antialiased overflow-x-hidden">
       <Navbar />
       <main className="relative">
-        <section id="about" className="scroll-mt-24">
+        <section id="home">
           <About />
         </section>
 
-        <section id="work" className="scroll-mt-24">
+        <section id="work" className="scroll-mt-14">
           <Work />
         </section>
 
-        <section id="projects" className="scroll-mt-24">
+        <section id="projects" className="scroll-mt-14">
           <Projects />
         </section>
 
-        <section id="tech" className="scroll-mt-24">
+        <section id="achievements" className="scroll-mt-14">
+          <Achievements />
+        </section>
+
+        <section id="tech" className="scroll-mt-14">
           <TechStack />
         </section>
 
-        <section id="contact" className="scroll-mt-24">
+        <section id="contact" className="scroll-mt-14">
           <Contact />
         </section>
       </main>

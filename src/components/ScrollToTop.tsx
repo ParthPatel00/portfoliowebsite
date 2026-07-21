@@ -31,27 +31,12 @@ function ScrollToTop() {
             damping: 20,
             duration: 0.3,
           }}
-          whileHover={{
-            scale: 1.1,
-            rotate: 360,
-            transition: { duration: 0.3 },
-          }}
-          whileTap={{ scale: 0.9 }}
-          className="fixed bottom-6 right-6 z-50 p-4 rounded-2xl bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 text-emerald-400 shadow-2xl hover:shadow-emerald-500/20 transition-all duration-300 group"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          className="fixed bottom-6 right-6 z-50 border-2 border-ink bg-paper p-3.5 text-ink shadow-hard-sm transition-colors hover:border-accent hover:text-accent"
           aria-label="Scroll to top"
         >
-          <div className="relative">
-            <ArrowUp
-              size={20}
-              className="group-hover:text-emerald-300 transition-colors"
-            />
-            <motion.div
-              className="absolute inset-0 rounded-2xl bg-emerald-500/20"
-              initial={{ scale: 0 }}
-              whileHover={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            />
-          </div>
+          <ArrowUp size={20} />
         </motion.button>
       )}
     </AnimatePresence>
