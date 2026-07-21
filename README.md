@@ -1,69 +1,60 @@
-# React + TypeScript + Vite
+# patelparth.me
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for Parth Patel: software engineer (backend, full stack, data). Built as a single-page React app with a Swiss-brutalist design system: cream background, heavy display type, red accent, mono labels, and an interactive terminal.
 
-Currently, two official plugins are available:
+Live: [patelparth.me](https://patelparth.me)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
 
-## Expanding the ESLint configuration
+- **React 19** + **TypeScript**, bundled with **Vite 7**
+- **Tailwind CSS 3** for styling (custom `paper` / `ink` / `accent` tokens in `tailwind.config.ts`)
+- **Framer Motion** for scroll/entrance animation
+- Self-hosted fonts via `@fontsource` (Archivo Black, Inter, JetBrains Mono)
+- Deployed on **Vercel**, analytics via `@vercel/analytics`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Structure
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+  data/          content: profile, work experience, projects, achievements, tech stack
+  sections/      one component per page section (About, Work, Projects, Achievements, TechStack, Contact)
+  components/    shared UI (Navbar, ProjectCard, TerminalMock, Marquee, BenchmarkBars, ...)
+  lib/motion.ts  shared framer-motion variants
+public/
+  projects/      project screenshots (webp)
+  Resume_Parth.pdf
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+All page copy lives in `src/data/` as typed objects, not hardcoded in JSX. To update content (a new project, a role change, a new cert), edit the relevant file in `src/data/` rather than the section components.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Sections
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Hero / About** — name, one-line positioning, achievement badges, resume/social links, an interactive fake-terminal (`src/components/TerminalMock.tsx`) with a few easter-egg commands, and a scrolling tech-stack marquee.
+2. **Experience** — work history timeline, sourced from `src/data/experience.ts`.
+3. **Projects** — featured projects as case-study rows (problem, how it works, impact, stack, live/GitHub links), plus a collapsible "earlier work" list for older projects. Sourced from `src/data/projects.ts`.
+4. **Achievements** — hackathon wins, industry awards, certifications.
+5. **Toolkit** — categorized tech stack.
+6. **Contact** — email (click-to-copy), GitHub, LinkedIn, resume.
+
+## Development
+
+```bash
+npm install
+npm run dev       # start dev server
+npm run build      # typecheck + production build
+npm run preview    # serve the production build locally
+npm run lint       # eslint
+```
+
+## Deployment
+
+Pushing to `main` triggers a Vercel deploy via its GitHub integration. There is no separate CI config; `npm run build` is the only gate.
+
+## Updating images
+
+Project screenshots live in `public/projects/` as `.webp`. To keep the site fast, resize to a sane max width and convert with `cwebp` before committing, e.g.:
+
+```bash
+sips -Z 1600 screenshot.png
+cwebp -q 80 screenshot.png -o public/projects/my-project.webp
 ```
